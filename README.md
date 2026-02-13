@@ -74,7 +74,7 @@ todo-app/
 
 1. Clone the repository
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Bonggx/Todo-Application-Project.git
 cd todo-app
 ```
 
@@ -143,6 +143,38 @@ Multiple layers of error handling:
 - Focus management in modals
 - Color contrast compliance (WCAG AA)
 
+## Project Status
+
+### Implemented Features
+- Complete CRUD operations (Create, Read, Update, Delete)
+- Pagination with user-friendly controls
+- Search and filtering by status
+- Error boundaries and 404 page
+- Responsive design
+- SEO and accessibility features
+- Real API integration
+
+### Bonus Features Not Implemented
+Due to time constraints, the following bonus features were not implemented:
+
+**Authentication & User Management:**
+- User signup and login flows
+- Protected routes
+- User-specific tasks
+- User profile page
+
+**Real-Time Notifications:**
+- WebSocket integration
+- Live task updates
+- Notification center
+
+**Offline Capabilities:**
+- Service workers
+- Offline mode
+- Cache strategies
+
+These features are documented as future improvements and would require additional backend support (authentication endpoints, WebSocket server).
+
 ## Known Issues and Future Improvements
 
 ### Current Limitations:
@@ -161,7 +193,7 @@ Multiple layers of error handling:
 
 ## Deployment
 
-The application is deployed on [Netlify/Vercel] at: `<your-deployed-url>`
+The application is deployed on Vercel at: https://todo-application-project.vercel.app
 
 ### Build for Production:
 ```bash
