@@ -287,7 +287,7 @@ https://todo-application-project.vercel.app
 
 ## Author
 
-Created by Eme for the ALT School of Engineering Frontend Third Semester Assessment.
+Created by Bongg for the ALT School of Engineering Frontend Second Semester Project Examination.
 
 ---
 
