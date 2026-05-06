@@ -1,68 +1,92 @@
-# Todo Application
+```md
+# Todo Application (TypeScript Version)
 
-A modern, full-featured todo application built with React that allows users to manage their daily tasks efficiently. This project demonstrates proficiency in frontend development, API integration, React patterns, and accessible UI design.
+A modern, full-featured Todo application built with **React + TypeScript**, designed to help users manage daily tasks efficiently while showcasing scalable frontend architecture, type safety, and clean UI practices.
+
+This project demonstrates real-world experience with API integration, state management using React Query, and building responsive, accessible interfaces.
+
+---
 
 ## Features
 
 ### Core Features
+
 - View all todos with pagination (10 items per page)
-- Search todos by title with real-time filtering
-- Filter todos by completion status (All/Completed/Incomplete)
-- View individual todo details
-- Create new todos with title and description
+- Real-time search by title
+- Filter todos by status (All / Completed / Incomplete)
+- View detailed information for each todo
+- Create new todos (title + description)
 - Edit existing todos
-- Delete todos with confirmation dialog
+- Delete todos with confirmation modal
 - Mark todos as complete/incomplete
 
+---
+
 ### Technical Features
+
+- Fully typed with **TypeScript**
 - Client-side routing with nested routes
-- Error boundary implementation for graceful error handling
-- Custom 404 page for undefined routes
+- Error Boundary for graceful error handling
+- Custom 404 page
 - Responsive design (mobile and desktop)
-- Loading states during API calls
-- SEO-optimized meta tags
+- Loading and error states for API calls
 - Accessibility features (ARIA labels, keyboard navigation, skip links)
-- React Suspense for code splitting
+- Code splitting using React Suspense
+- Clean separation of concerns (components, pages, services, types)
+
+---
 
 ## Technology Stack
 
-- **React 19** - UI library with hooks and functional components
-- **React Router** - Client-side routing
-- **TanStack Query (React Query)** - Data fetching and caching
-- **Axios** - HTTP client for API requests
-- **Tailwind CSS** - Utility-first CSS framework
-- **Lucide React** - Icon library
-- **Vite** - Build tool and dev server
+- **React 19 + TypeScript** — UI development with type safety
+- **React Router** — Client-side routing
+- **TanStack Query (React Query)** — Data fetching, caching, mutations
+- **Axios** — API requests
+- **Tailwind CSS** — Utility-first styling
+- **Lucide React** — Icons
+- **Vite** — Development and build tool
+
+---
 
 ## Project Structure
 ```
+
 todo-app/
 ├── public/
 ├── src/
-│   ├── components/       # Reusable UI components
-│   │   ├── ErrorBoundary.jsx
-│   │   ├── Modal.jsx
-│   │   ├── Pagination.jsx
-│   │   ├── SkipLink.jsx
-│   │   ├── TodoFilters.jsx
-│   │   ├── TodoForm.jsx
-│   │   └── TodoList.jsx
-│   ├── pages/           # Full page components
-│   │   ├── ErrorTestPage.jsx
-│   │   ├── NotFoundPage.jsx
-│   │   ├── TodoDetailPage.jsx
-│   │   └── TodoListPage.jsx
-│   ├── services/        # API service layer
-│   │   └── api.js
-│   ├── App.jsx          # Main app component with routes
-│   ├── main.jsx         # Application entry point
-│   └── index.css        # Global styles
+│ ├── components/ # Reusable UI components
+│ │ ├── ErrorBoundary.tsx
+│ │ ├── Modal.tsx
+│ │ ├── Pagination.tsx
+│ │ ├── SkipLink.tsx
+│ │ ├── TodoFilters.tsx
+│ │ ├── TodoForm.tsx
+│ │ └── TodoList.tsx
+│ ├── pages/  
+│ │ ├── ErrorTestPage.tsx
+│ │ ├── NotFoundPage.tsx
+│ │ ├── TodoDetailPage.tsx
+│ │ └── TodoListPage.tsx
+│ ├── services/  
+│ │ └── api.ts
+│ ├── types/  
+│ │ └── types.ts
+│ ├── App.tsx  
+│ ├── main.tsx  
+│ └── index.css
+│ └── settings.json
+│ └── vite-env.d.ts  
 ├── index.html
+├── package-lock.json
 ├── package.json
 ├── tailwind.config.js
-├── vite.config.js
+├── vite.config.ts
+├── package.json
 └── README.md
-```
+
+````
+
+---
 
 ## Setup Instructions
 
@@ -70,159 +94,207 @@ todo-app/
 - Node.js (v18 or higher)
 - npm or yarn
 
+---
+
 ### Installation
 
 1. Clone the repository
 ```bash
 git clone https://github.com/Bonggx/Todo-Application-Project.git
 cd todo-app
-```
+````
 
 2. Install dependencies
+
 ```bash
 npm install
 ```
 
-3. Start the development server
+3. Start development server
+
 ```bash
 npm run dev
 ```
 
-4. Open your browser and navigate to `http://localhost:5173`
+4. Open your browser and navigate to:
+
+```
+http://localhost:5173
+```
+
+---
 
 ## Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build locally
-- `npm run lint` - Run ESLint for code quality
+- `npm run dev` — Start development server
+- `npm run build` — Build for production
+- `npm run preview` — Preview production build
+- `npm run lint` — Run ESLint
+
+---
 
 ## API Integration
 
-The application connects to the backend API at `https://api.oluwasetemi.dev`
+The application connects to:
+
+```
+https://api.oluwasetemi.dev
+```
 
 ### Endpoints Used:
-- `GET /tasks` - Fetch all tasks
-- `GET /tasks/:id` - Fetch single task
-- `POST /tasks` - Create new task
-- `PATCH /tasks/:id` - Update existing task
-- `DELETE /tasks/:id` - Delete task
 
-### Data Transformation:
-The API uses different field names than the frontend, so data is transformed:
+- `GET /tasks` — Fetch all todos
+- `GET /tasks/:id` — Fetch a single todo
+- `POST /tasks` — Create a todo
+- `PATCH /tasks/:id` — Update a todo
+- `DELETE /tasks/:id` — Delete a todo
+
+---
+
+### Data Transformation
+
+The API uses different field names than the frontend, so a transformation layer is implemented:
+
 - API `name` → Frontend `title`
-- API `status` (TODO/DONE) → Frontend `completed` (boolean)
+- API `status` → Frontend `completed` (boolean)
+
+---
 
 ## Key Design Decisions
 
-### Why React Query?
-React Query handles caching, background refetching, and loading states automatically, reducing boilerplate code and improving user experience.
+### TypeScript Migration
 
-### Why Tailwind CSS?
-Tailwind provides utility classes that make it easy to create responsive, consistent designs without writing custom CSS. It's also highly customizable and has excellent performance.
+The project was migrated from JavaScript to TypeScript to:
 
-### Component Structure
-Components are organized by purpose:
-- Reusable UI components in `/components`
-- Full page views in `/pages`
-- Business logic separated into `/services`
+- Improve type safety
+- Catch bugs early
+- Enhance maintainability
+- Improve developer experience
 
-### Error Handling
-Multiple layers of error handling:
-- Error Boundary catches React component errors
-- API error handling with user-friendly messages
-- 404 page for invalid routes
-- Loading states to prevent confusion
+---
+
+### React Query
+
+Used for:
+
+- Server state management
+- Automatic caching
+- Background refetching
+- Handling mutations efficiently
+
+---
+
+### Tailwind CSS
+
+Chosen for:
+
+- Rapid UI development
+- Consistent styling
+- Responsive design utilities
+- Minimal custom CSS
+
+---
+
+### Architecture
+
+- **Components** → reusable UI elements
+- **Pages** → route-based views
+- **Services** → API logic
+- **Types** → centralized TypeScript definitions
+
+---
 
 ## Accessibility Features
 
-- Semantic HTML elements
+- Semantic HTML structure
 - ARIA labels for screen readers
 - Keyboard navigation support
-- Skip to main content link
+- Skip-to-content link
 - Focus management in modals
-- Color contrast compliance (WCAG AA)
+- WCAG-compliant color contrast
+
+---
 
 ## Project Status
 
 ### Implemented Features
-- Complete CRUD operations (Create, Read, Update, Delete)
-- Pagination with user-friendly controls
-- Search and filtering by status
-- Error boundaries and 404 page
-- Responsive design
-- SEO and accessibility features
-- Real API integration
 
-### Bonus Features Not Implemented
-Due to time constraints, the following bonus features were not implemented:
+- Full CRUD operations (Create, Read, Update, Delete)
+- Pagination, search, and filtering
+- API integration
+- TypeScript migration
+- Error handling and 404 page
+- Responsive UI
 
-**Authentication & User Management:**
-- User signup and login flows
-- Protected routes
-- User-specific tasks
-- User profile page
+---
 
-**Real-Time Notifications:**
-- WebSocket integration
-- Live task updates
-- Notification center
+### Future Improvements
 
-**Offline Capabilities:**
-- Service workers
-- Offline mode
-- Cache strategies
-
-These features are documented as future improvements and would require additional backend support (authentication endpoints, WebSocket server).
-
-## Known Issues and Future Improvements
-
-### Current Limitations:
-- No user authentication (todos are public)
-- No offline support
-- Limited to 10 items per page (not configurable)
-
-### Planned Improvements:
-- Add user authentication
-- Implement real-time updates via WebSocket
-- Add offline capability with service workers
-- Todo categories and tags
+- Authentication (login/signup)
+- User-specific todos
+- Real-time updates (WebSockets)
+- Offline support (PWA)
+- Categories and tags
 - Due dates and reminders
 - Drag-and-drop reordering
-- Dark mode support
+- Dark mode
+
+---
+
+## Known Limitations
+
+- No user authentication (todos are public)
+- No offline support
+- Fixed pagination size
+
+---
 
 ## Deployment
 
-The application is deployed on Vercel at: https://todo-application-project.vercel.app
+The application is deployed on Vercel at:
 
-### Build for Production:
-```bash
-npm run build
+```
+https://todo-application-project.vercel.app
 ```
 
-The build output will be in the `dist/` folder, ready for deployment.
+---
 
 ## Development Challenges and Solutions
 
-### Challenge 1: API Data Format Mismatch
-**Problem:** The API returns tasks with `name` and `status` fields, but the frontend uses `title` and `completed`.
+### Challenge 1: Type Migration
 
-**Solution:** Created a transformation layer in the API service that converts between formats seamlessly.
+**Problem:** Transitioning from JavaScript to TypeScript introduced type inconsistencies.
 
-### Challenge 2: Pagination with Search/Filters
-**Problem:** Pagination needed to work correctly with search and filter results.
+**Solution:** Centralized types in `/types` and enforced strict typing across components and API.
 
-**Solution:** Implemented client-side pagination that recalculates based on filtered data and resets to page 1 when filters change.
+---
 
-### Challenge 3: Modal Focus Management
-**Problem:** Users could tab outside modals, breaking accessibility.
+### Challenge 2: API Data Mismatch
 
-**Solution:** Added focus trapping and proper ARIA attributes to modals, with escape key support.
+**Problem:** Backend fields differed from frontend expectations.
+
+**Solution:** Implemented a transformation layer in the API service.
+
+---
+
+### Challenge 3: UI Not Updating After Mutations
+
+**Problem:** Changes were not immediately reflected in the UI.
+
+**Solution:** Used React Query’s `invalidateQueries` to refetch updated data.
+
+---
 
 ## Author
 
-Created by Eme for the ALT School of Engineering Frontend Second Semester Project Examination.
+Created by Eme for the ALT School of Engineering Frontend Third Semester Assessment.
+
+---
 
 ## License
 
-This project was created for educational purposes.
+This project is for educational and portfolio purposes.
+
+```
+
+```
