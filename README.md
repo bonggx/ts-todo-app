@@ -254,7 +254,7 @@ Chosen for:
 The application is deployed on Vercel at:
 
 ```
-https://todo-application-project.vercel.app
+https://ts-todo-app-pi.vercel.app
 ```
 
 ---
