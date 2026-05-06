@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
-import TodoListPage from './pages/TodoListPage'
-import TodoDetailPage from './pages/TodoDetailPage'
+import TodoListPage from './pages/TodoListPage.tsx'
+import TodoDetailPage from './pages/TodoDetailPage.tsx'
 import NotFoundPage from './pages/NotFoundPage'
 import ErrorTestPage from './pages/ErrorTestPage'
 import SkipLink from './components/SkipLink'
